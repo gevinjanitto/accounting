@@ -1,0 +1,10 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": { "builder": "RAILPACK", "buildCommand": "CI=false GENERATE_SOURCEMAP=false yarn build" },
+  "deploy": {
+    "startCommand": "yarn serve -s build -l ${PORT:-3000}",
+    "healthcheckPath": "/",
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 5
+  }
+}
